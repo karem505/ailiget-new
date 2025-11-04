@@ -114,7 +114,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(90deg, #5994B7 40%, #14B06C 100%);
+    background: linear-gradient(90deg, #5994b7 40%, #14b06c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -125,7 +125,11 @@
     height: 384px;
     border-radius: 9999px;
     opacity: 0.3;
-    background: radial-gradient(70.71% 70.71% at 50% 50%, rgba(153, 82, 224, 0.50) 0%, rgba(153, 82, 224, 0.00) 70%);
+    background: radial-gradient(
+      70.71% 70.71% at 50% 50%,
+      rgba(153, 82, 224, 0.5) 0%,
+      rgba(153, 82, 224, 0) 70%
+    );
     filter: blur(32px);
   }
 
@@ -134,7 +138,11 @@
     height: 320px;
     border-radius: 9999px;
     opacity: 0.3;
-    background: radial-gradient(70.71% 70.71% at 50% 50%, rgba(0, 212, 255, 0.50) 0%, rgba(0, 212, 255, 0.00) 70%);
+    background: radial-gradient(
+      70.71% 70.71% at 50% 50%,
+      rgba(0, 212, 255, 0.5) 0%,
+      rgba(0, 212, 255, 0) 70%
+    );
     filter: blur(32px);
   }
 }

@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-[#010413] text-white">
       <Header />
-      
+
       <main className="pt-[90px]">
         <HeroSection />
         <FoundationSection />
@@ -24,7 +24,7 @@ export default function Index() {
         <TransformSection />
         <ContactFormSection />
       </main>
-      
+
       <Footer />
     </div>
   );

@@ -110,17 +110,21 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        commissioner: ['Commissioner', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
+        commissioner: ["Commissioner", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       backgroundImage: {
-        'gradient-brand': 'linear-gradient(90deg, #7940BE 0%, #9952E0 19.85%, #5994B7 64.34%, #14B06C 100%)',
-        'gradient-hero': 'linear-gradient(117deg, #131119 2.09%, #171321 21.39%, #41227C 65.31%, #4772A7 100%)',
-        'gradient-card': 'linear-gradient(129deg, rgba(27, 34, 50, 0.70) 0%, rgba(14, 21, 37, 0.60) 100%)',
-        'gradient-icon': 'linear-gradient(123deg, rgba(121, 64, 190, 0.50) 0.97%, rgba(153, 82, 224, 0.50) 20.49%, rgba(89, 148, 183, 0.50) 68.1%, rgba(20, 176, 108, 0.50) 100%)',
-        'gradient-text': 'linear-gradient(90deg, #5994B7 40%, #14B06C 100%)',
+        "gradient-brand":
+          "linear-gradient(90deg, #7940BE 0%, #9952E0 19.85%, #5994B7 64.34%, #14B06C 100%)",
+        "gradient-hero":
+          "linear-gradient(117deg, #131119 2.09%, #171321 21.39%, #41227C 65.31%, #4772A7 100%)",
+        "gradient-card":
+          "linear-gradient(129deg, rgba(27, 34, 50, 0.70) 0%, rgba(14, 21, 37, 0.60) 100%)",
+        "gradient-icon":
+          "linear-gradient(123deg, rgba(121, 64, 190, 0.50) 0.97%, rgba(153, 82, 224, 0.50) 20.49%, rgba(89, 148, 183, 0.50) 68.1%, rgba(20, 176, 108, 0.50) 100%)",
+        "gradient-text": "linear-gradient(90deg, #5994B7 40%, #14B06C 100%)",
       },
     },
   },
