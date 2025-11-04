@@ -6,8 +6,20 @@ import {
   TrendingUp,
   Target,
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function FoundationSection() {
+  const { t } = useLanguage();
+
+  const values = [
+    { icon: Sparkles, key: "foundation.value1" },
+    { icon: Award, key: "foundation.value2" },
+    { icon: Heart, key: "foundation.value3" },
+    { icon: Users, key: "foundation.value4" },
+    { icon: TrendingUp, key: "foundation.value5" },
+    { icon: Target, key: "foundation.value6" },
+  ];
+
   return (
     <section className="relative py-16 md:py-24 px-4 max-w-[1308px] mx-auto">
       {/* Blur effect */}
@@ -17,10 +29,10 @@ export default function FoundationSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <h2 className="text-3xl md:text-[44px] font-medium font-commissioner uppercase text-[#FBFBFB] leading-tight">
-            Our Foundation
+            {t("foundation.title")}
           </h2>
           <p className="text-base font-medium font-commissioner text-[#CCC]">
-            Guided by purpose, driven by innovation
+            {t("foundation.subtitle")}
           </p>
         </div>
 
@@ -38,13 +50,10 @@ export default function FoundationSection() {
               </div>
               <div className="space-y-3.5">
                 <h3 className="text-xl font-medium font-commissioner text-[#FBFBFB]">
-                  Our Vision
+                  {t("foundation.vision.title")}
                 </h3>
                 <p className="text-sm font-normal font-commissioner text-[#CCC] leading-[19.6px]">
-                  Is to establish Ailigent as the world's leading partner for
-                  organizations driving sustainable digital transformation —
-                  powered by trusted, self-learning AI systems that work
-                  autonomously and deliver measurable performance impact.
+                  {t("foundation.vision.description")}
                 </p>
               </div>
             </div>
@@ -62,13 +71,10 @@ export default function FoundationSection() {
               </div>
               <div className="space-y-3.5">
                 <h3 className="text-xl font-medium font-commissioner text-[#FBFBFB]">
-                  Our Mission
+                  {t("foundation.mission.title")}
                 </h3>
                 <p className="text-sm font-normal font-commissioner text-[#CCC] leading-[19.6px]">
-                  Is to empower enterprises across all sectors to achieve
-                  operational excellence through autonomous AI solutions that
-                  drive strategic automation and transform data into real-time
-                  intelligent decisions.
+                  {t("foundation.mission.description")}
                 </p>
               </div>
             </div>
@@ -86,24 +92,17 @@ export default function FoundationSection() {
               </div>
               <div className="space-y-3.5">
                 <h3 className="text-xl font-medium font-commissioner text-[#FBFBFB]">
-                  Our Values
+                  {t("foundation.values.title")}
                 </h3>
                 <div className="space-y-1">
-                  {[
-                    { icon: Sparkles, text: "Sustainable Innovation" },
-                    { icon: Award, text: "Integrity & Transparency" },
-                    { icon: Heart, text: "Client-Centric Approach" },
-                    { icon: Users, text: "Collaboration & Inclusion" },
-                    { icon: TrendingUp, text: "Excellence in Execution" },
-                    { icon: Target, text: "Responsible AI" },
-                  ].map((value, idx) => (
+                  {values.map((value, idx) => (
                     <div key={idx} className="flex items-center gap-3">
                       <value.icon
                         className="w-5 h-5 text-[rgba(171,109,247,0.40)]"
                         strokeWidth={1.67}
                       />
                       <span className="text-sm font-medium font-inter text-[rgba(250,250,250,0.90)]">
-                        {value.text}
+                        {t(value.key)}
                       </span>
                     </div>
                   ))}
