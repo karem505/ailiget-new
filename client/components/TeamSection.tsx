@@ -4,32 +4,32 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const teamMembers = [
   {
     name: "Dr. Ahmed Alsenosy",
-    role: "CEO",
-    position: "General Manager",
+    roleKey: "team.role.ceo",
+    positionKey: "team.position.general",
     image:
       "https://api.builder.io/api/v1/image/assets/TEMP/8e14fe56939827f567f7772c1176762f02b45bf0?width=258",
   },
   {
     name: "Dr. Karem Shohoud",
-    role: "CMO",
-    position: "Chief Executive Officer",
+    roleKey: "team.role.cmo",
+    positionKey: "team.position.ceo",
     image:
       "https://api.builder.io/api/v1/image/assets/TEMP/8a30d450e67e3f46363339267dd2a4e2c7bc28c6?width=288",
   },
   {
     name: "Dr. Sohaila Abuelliel",
-    role: "CMO",
-    position: "Chief Executive Officer",
+    roleKey: "team.role.cmo",
+    positionKey: "team.position.ceo",
     image:
       "https://api.builder.io/api/v1/image/assets/TEMP/c8094a62569ee3d3b7a08b67ea5cdeee904b4d4c?width=250",
   },
 ];
 
 const placeholderMembers = [
-  { name: "Dr. User two", role: "CMO", position: "Chief Executive Officer" },
-  { name: "Dr. User three", role: "CMO", position: "Chief Executive Officer" },
-  { name: "Dr. User four", role: "CMO", position: "Chief Executive Officer" },
-  { name: "Dr. User one", role: "CMO", position: "Chief Executive Officer" },
+  { name: "Dr. User two", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
+  { name: "Dr. User three", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
+  { name: "Dr. User four", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
+  { name: "Dr. User one", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
 ];
 
 export default function TeamSection() {
@@ -72,10 +72,10 @@ export default function TeamSection() {
                       {member.name}
                     </h3>
                     <p className="text-sm font-semibold font-inter text-[#7C39D3]">
-                      {member.role}
+                      {t(member.roleKey)}
                     </p>
                     <p className="text-sm font-normal font-inter text-[#A7AFBE]">
-                      {member.position}
+                      {t(member.positionKey)}
                     </p>
 
                     <button className="inline-flex items-center gap-2 px-3 py-2 rounded-[14px] border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] shadow-[0_8px_32px_0_rgba(0,0,0,0.40),0_0_20px_0_rgba(0,212,255,0.15)]">
@@ -103,10 +103,10 @@ export default function TeamSection() {
                       {member.name}
                     </h3>
                     <p className="text-sm font-semibold font-inter text-[#7C39D3]">
-                      {member.role}
+                      {t(member.roleKey)}
                     </p>
                     <p className="text-sm font-normal font-inter text-[#A7AFBE]">
-                      {member.position}
+                      {t(member.positionKey)}
                     </p>
 
                     <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[8px] text-sm font-medium font-inter text-[#FCFBF8]">

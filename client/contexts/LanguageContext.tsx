@@ -123,10 +123,29 @@ const translationsEn: Record<string, string> = {
   "success.pe.point4": "Seamless integration with existing systems",
   "success.pe.point5": "Measurable efficiency improvements",
 
+  // Foundation Section
+  "foundation.title": "Our Foundation",
+  "foundation.subtitle": "Guided by purpose, driven by innovation",
+  "foundation.vision.title": "Our Vision",
+  "foundation.vision.description": "Is to establish Ailigent as the world's leading partner for organizations driving sustainable digital transformation — powered by trusted, self-learning AI systems that work autonomously and deliver measurable performance impact.",
+  "foundation.mission.title": "Our Mission",
+  "foundation.mission.description": "Is to empower enterprises across all sectors to achieve operational excellence through autonomous AI solutions that drive strategic automation and transform data into real-time intelligent decisions.",
+  "foundation.values.title": "Our Values",
+  "foundation.value1": "Sustainable Innovation",
+  "foundation.value2": "Integrity & Transparency",
+  "foundation.value3": "Client-Centric Approach",
+  "foundation.value4": "Collaboration & Inclusion",
+  "foundation.value5": "Excellence in Execution",
+  "foundation.value6": "Responsible AI",
+
   // Team Section
   "team.title": "MEET OUR TEAM",
   "team.subtitle": "Expertise Driving Innovation",
   "team.linkedin": "LinkedIn",
+  "team.role.ceo": "CEO",
+  "team.role.cmo": "CMO",
+  "team.position.general": "General Manager",
+  "team.position.ceo": "Chief Executive Officer",
 
   // Transform Section
   "transform.title": "READY TO TRANSFORM YOUR OPERATIONS !",
@@ -243,10 +262,29 @@ const translationsAr: Record<string, string> = {
   "success.pe.point4": "التكامل السلس مع الأنظمة الموجودة",
   "success.pe.point5": "تحسينات الكفاءة القابلة للقياس",
 
+  // Foundation Section
+  "foundation.title": "أساسنا",
+  "foundation.subtitle": "موجهون بالهدف، مدفوعون بالابتكار",
+  "foundation.vision.title": "رؤيتنا",
+  "foundation.vision.description": "هي تأسيس أيليجنت كالشريك الرائد عالمياً للمؤسسات التي تقود التحول الرقمي المستدام — مدعومة بأنظمة ذكاء اصطناعي موثوقة ذاتية التعلم تعمل بشكل مستقل وتحقق تأثيراً قابلاً للقياس في الأداء.",
+  "foundation.mission.title": "مهمتنا",
+  "foundation.mission.description": "هي تمكين المؤسسات عبر جميع القطاعات لتحقيق التميز التشغيلي من خلال حلول الذكاء الاصطناعي المستقلة التي تدفع الأتمتة الاستراتيجية وتحول البيانات إلى قرارات ذكية في الوقت الفعلي.",
+  "foundation.values.title": "قيمنا",
+  "foundation.value1": "الابتكار المستدام",
+  "foundation.value2": "النزاهة والشفافية",
+  "foundation.value3": "نهج يركز على العميل",
+  "foundation.value4": "التعاون والشمول",
+  "foundation.value5": "التميز في التنفيذ",
+  "foundation.value6": "الذكاء الاصطناعي المسؤول",
+
   // Team Section
   "team.title": "تعرف على فريقنا",
   "team.subtitle": "الخبرة تقود الابتكار",
   "team.linkedin": "لينكد إن",
+  "team.role.ceo": "الرئيس التنفيذي",
+  "team.role.cmo": "مدير التسويق",
+  "team.position.general": "المدير العام",
+  "team.position.ceo": "الرئيس التنفيذي للشركة",
 
   // Transform Section
   "transform.title": "هل أنت مستعد لتحويل عملياتك؟",
