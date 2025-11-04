@@ -6,52 +6,49 @@ import {
   Brain,
   MessageSquare,
 } from "lucide-react";
-
-const services = [
-  {
-    icon: Lightbulb,
-    title: "Business Consultation & Customized Software",
-    description:
-      "We conduct in-depth analysis of a company's departments, identifying strengths and weaknesses. We then design and implement bespoke business automation and software solutions to address these specific challenges, optimizing processes and enhancing efficiency.",
-  },
-  {
-    icon: Rocket,
-    title: "Digital Transformation",
-    description:
-      "Accelerate your digital journey with innovation-driven strategies, modern technologies, and scalable business models. Our approach optimizes operations, enhances agility, and delivers superior customer-centric experiences.",
-  },
-  {
-    icon: LinkIcon,
-    title: "AI Integration",
-    description:
-      "Our AI integration services connect artificial intelligence with your existing ERP, CRM, and other enterprise systems.",
-  },
-  {
-    icon: Zap,
-    title: "Agentic AI Development",
-    description:
-      "Empower your business with autonomous agents capable of complex problem-solving, advanced process automation, and intelligent decision-making.",
-  },
-  {
-    icon: Brain,
-    title: "Generative AI Development",
-    description:
-      "Specializing in Generative AI in Saudi Arabia, we create solutions powered by Large Language Models (LLMs) for content generation, automation, and predictive analytics.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Conversational AI",
-    description:
-      "We design sophisticated conversational AI solutions that deliver human-like interactions, automate customer communication, and significantly improve user experiences.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProfessionalServicesSection() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: Lightbulb,
+      titleKey: "professional.service1.title",
+      descriptionKey: "professional.service1.description",
+    },
+    {
+      icon: Rocket,
+      titleKey: "professional.service2.title",
+      descriptionKey: "professional.service2.description",
+    },
+    {
+      icon: LinkIcon,
+      titleKey: "professional.service3.title",
+      descriptionKey: "professional.service3.description",
+    },
+    {
+      icon: Zap,
+      titleKey: "professional.service4.title",
+      descriptionKey: "professional.service4.description",
+    },
+    {
+      icon: Brain,
+      titleKey: "professional.service5.title",
+      descriptionKey: "professional.service5.description",
+    },
+    {
+      icon: MessageSquare,
+      titleKey: "professional.service6.title",
+      descriptionKey: "professional.service6.description",
+    },
+  ];
+
   return (
     <section className="py-16 md:py-24 px-4">
       <div className="max-w-[1283px] mx-auto space-y-8">
         <h2 className="text-2xl md:text-[30px] font-bold font-poppins text-center text-[#FCFBF8]">
-          PROFESSIONAL SERVICES
+          {t("professional.title")}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -71,11 +68,11 @@ export default function ProfessionalServicesSection() {
                 </div>
 
                 <h3 className="text-lg font-semibold font-poppins text-center text-[#FCFBF8] leading-7 tracking-tight">
-                  {service.title}
+                  {t(service.titleKey)}
                 </h3>
 
                 <p className="text-sm font-normal font-inter text-center text-[#A7AFBE] leading-[22.75px]">
-                  {service.description}
+                  {t(service.descriptionKey)}
                 </p>
               </div>
             </div>

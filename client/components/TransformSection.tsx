@@ -1,38 +1,37 @@
 import { BarChart3, Target, Handshake } from "lucide-react";
-
-const features = [
-  {
-    icon: BarChart3,
-    title: "Complimentary Assessment",
-    description:
-      "Free analysis of your automation potential and ROI projections.",
-  },
-  {
-    icon: Target,
-    title: "Custom Solution Design",
-    description: "Tailored automation architecture for your specific needs.",
-  },
-  {
-    icon: Handshake,
-    title: "White-Glove Implementation",
-    description:
-      "End-to-end support from design through deployment and beyond.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TransformSection() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: BarChart3,
+      titleKey: "transform.feature1.title",
+      descriptionKey: "transform.feature1.description",
+    },
+    {
+      icon: Target,
+      titleKey: "transform.feature2.title",
+      descriptionKey: "transform.feature2.description",
+    },
+    {
+      icon: Handshake,
+      titleKey: "transform.feature3.title",
+      descriptionKey: "transform.feature3.description",
+    },
+  ];
+
   return (
     <section className="py-16 md:py-24 px-4">
       <div className="max-w-[1088px] mx-auto space-y-16">
         {/* Header */}
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold font-poppins text-[#FCFBF8] leading-tight">
-            READY TO TRANSFORM YOUR OPERATIONS !
+            {t("transform.title")}
           </h2>
           <p className="text-lg font-normal font-inter text-[#A7AFBE] max-w-[768px] mx-auto">
-            Schedule a strategic consultation with our enterprise automation
-            experts. We'll analyze your current processes and design a custom AI
-            solution that delivers measurable ROI.
+            {t("transform.subtitle")}
           </p>
         </div>
 
@@ -52,11 +51,11 @@ export default function TransformSection() {
                 </div>
 
                 <h3 className="text-xl font-semibold font-poppins text-center text-[#FCFBF8] tracking-tight">
-                  {feature.title}
+                  {t(feature.titleKey)}
                 </h3>
 
                 <p className="text-sm font-normal font-inter text-center text-[rgba(250,250,250,0.80)]">
-                  {feature.description}
+                  {t(feature.descriptionKey)}
                 </p>
               </div>
             </div>
