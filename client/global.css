@@ -98,6 +98,7 @@
 
   body {
     @apply bg-[#010413] text-foreground font-inter;
+    min-width: 320px; /* Ensure minimum viewport width */
   }
 
   /* RTL Support for Arabic */
@@ -113,9 +114,21 @@
     direction: ltr;
   }
 
+  /* Responsive text handling */
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
     overflow-wrap: anywhere;
     word-break: break-word;
+  }
+
+  /* Prevent horizontal scroll on small screens */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 
   pre,
