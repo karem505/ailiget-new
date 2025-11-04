@@ -1,6 +1,25 @@
 import { CheckCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function SuccessStoriesSection() {
+  const { t } = useLanguage();
+
+  const tornixPoints = [
+    t("success.tornix.point1"),
+    t("success.tornix.point2"),
+    t("success.tornix.point3"),
+    t("success.tornix.point4"),
+    t("success.tornix.point5"),
+  ];
+
+  const pePoints = [
+    t("success.pe.point1"),
+    t("success.pe.point2"),
+    t("success.pe.point3"),
+    t("success.pe.point4"),
+    t("success.pe.point5"),
+  ];
+
   return (
     <section className="relative py-16 md:py-24 px-4">
       {/* Blur effects */}
@@ -10,10 +29,10 @@ export default function SuccessStoriesSection() {
         {/* Header */}
         <div className="text-center space-y-4 mb-16 max-w-[535px] mx-auto">
           <h2 className="text-4xl md:text-[60px] font-bold font-commissioner text-gradient leading-tight">
-            SUCCESS STORIES
+            {t("success.title")}
           </h2>
           <p className="text-xl font-normal font-inter text-[#A7AFBE]">
-            Delivering Excellence Across Industries
+            {t("success.subtitle")}
           </p>
         </div>
 
@@ -44,34 +63,24 @@ export default function SuccessStoriesSection() {
                     className="w-16 h-16"
                   />
                   <span className="px-3 py-1 rounded-full border border-[rgba(121,64,190,0.50)] bg-[rgba(27,34,50,0.70)] text-xs font-semibold text-[#7C39D3]">
-                    Featured Partnership
+                    {t("success.tornix.badge")}
                   </span>
                 </div>
 
                 <h3 className="text-2xl md:text-[30px] font-semibold font-poppins text-[#FCFBF8] tracking-tight">
-                  TORNIX
+                  {t("success.tornix.title")}
                 </h3>
 
                 <p className="text-base font-normal font-inter text-[rgba(250,250,250,0.90)] leading-[26px]">
-                  Tornix is an advanced AI-powered platform designed to
-                  transform project planning, execution, and delivery.
-                  Specializing in construction and large-scale projects, it
-                  integrates cutting-edge AI to bring automation, predictive
-                  analytics, and intelligent decision support.
+                  {t("success.tornix.description")}
                 </p>
 
                 <div className="space-y-3">
                   <h4 className="text-lg font-semibold font-poppins text-[#FCFBF8]">
-                    Project Focus:
+                    {t("success.tornix.focus")}
                   </h4>
                   <ul className="space-y-2">
-                    {[
-                      "AI-Powered Project Management & Construction Intelligence",
-                      "AI-driven cost and resource estimation",
-                      "Automated risk detection and Monte Carlo simulations",
-                      "Natural language project queries",
-                      "Digital-twin simulations and dashboards",
-                    ].map((item, idx) => (
+                    {tornixPoints.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#7C39D3] flex-shrink-0 mt-0.5" />
                         <span className="text-sm font-normal font-inter text-[rgba(250,250,250,0.80)]">
@@ -111,32 +120,24 @@ export default function SuccessStoriesSection() {
                     className="h-16 w-auto"
                   />
                   <span className="px-3 py-1 rounded-full border border-[rgba(121,64,190,0.30)] bg-[rgba(27,34,50,0.70)] text-xs font-semibold text-[#7C39D3]">
-                    Client Success Story
+                    {t("success.pe.badge")}
                   </span>
                 </div>
 
                 <h3 className="text-2xl md:text-[30px] font-semibold font-poppins text-[#FCFBF8] tracking-tight">
-                  PROFESSIONAL ENGINEERS
+                  {t("success.pe.title")}
                 </h3>
 
                 <p className="text-base font-normal font-inter text-[rgba(250,250,250,0.90)] leading-[26px]">
-                  Delivering comprehensive full operation automation and custom
-                  software solutions for professional engineering firms,
-                  streamlining workflows and enhancing operational efficiency.
+                  {t("success.pe.description")}
                 </p>
 
                 <div className="space-y-3">
                   <h4 className="text-lg font-semibold font-poppins text-[#FCFBF8]">
-                    Project Focus:
+                    {t("success.pe.focus")}
                   </h4>
                   <ul className="space-y-2">
-                    {[
-                      "Full Operation Automation & Custom Software Development",
-                      "End-to-end automation implementation",
-                      "Custom software solutions tailored to engineering workflows",
-                      "Seamless integration with existing systems",
-                      "Measurable efficiency improvements",
-                    ].map((item, idx) => (
+                    {pePoints.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#7C39D3] flex-shrink-0 mt-0.5" />
                         <span className="text-sm font-normal font-inter text-[rgba(250,250,250,0.80)]">

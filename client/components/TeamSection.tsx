@@ -1,4 +1,5 @@
 import { Linkedin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const teamMembers = [
   {
@@ -32,6 +33,8 @@ const placeholderMembers = [
 ];
 
 export default function TeamSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-16 md:py-24 px-4">
       {/* Blur effect */}
@@ -41,10 +44,10 @@ export default function TeamSection() {
         {/* Header */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold font-poppins text-[#FCFBF8]">
-            MEET OUR TEAM
+            {t("team.title")}
           </h2>
           <p className="text-xl font-normal font-inter text-[#A7AFBE]">
-            Expertise Driving Innovation
+            {t("team.subtitle")}
           </p>
         </div>
 
@@ -78,7 +81,7 @@ export default function TeamSection() {
                     <button className="inline-flex items-center gap-2 px-3 py-2 rounded-[14px] border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] shadow-[0_8px_32px_0_rgba(0,0,0,0.40),0_0_20px_0_rgba(0,212,255,0.15)]">
                       <Linkedin className="w-4 h-4 text-[#7C39D3]" />
                       <span className="text-sm font-medium font-inter text-[#FCFBF8]">
-                        LinkedIn
+                        {t("team.linkedin")}
                       </span>
                     </button>
                   </div>
@@ -108,7 +111,7 @@ export default function TeamSection() {
 
                     <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[8px] text-sm font-medium font-inter text-[#FCFBF8]">
                       <Linkedin className="w-3 h-3 text-[#7C39D3]" />
-                      LinkedIn
+                      {t("team.linkedin")}
                     </button>
                   </div>
                 </div>

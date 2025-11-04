@@ -1,6 +1,23 @@
 import { Linkedin, Twitter, Facebook } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const solutionItems = [
+    t("footer.solutions.ai"),
+    t("footer.solutions.software"),
+    t("footer.solutions.optimization"),
+    t("footer.solutions.integration"),
+  ];
+
+  const companyItems = [
+    t("footer.company.about"),
+    t("footer.company.cases"),
+    t("footer.company.team"),
+    t("footer.company.contact"),
+  ];
+
   return (
     <footer className="relative py-16 px-4 bg-[#0E1525]">
       <div className="max-w-[1440px] mx-auto">
@@ -13,9 +30,7 @@ export default function Footer() {
               className="w-[50px] h-[50px]"
             />
             <p className="text-sm font-normal font-inter text-[#A7AFBE] leading-relaxed">
-              Transforming businesses through intelligent automation and AI
-              solutions. Empowering enterprises to achieve operational
-              excellence.
+              {t("footer.description")}
             </p>
             <div className="flex gap-4">
               <button className="w-10 h-10 flex items-center justify-center rounded-lg border border-[rgba(121,64,190,0.30)] bg-[rgba(27,34,50,0.70)] hover:bg-[rgba(27,34,50,0.90)] transition-colors">
@@ -33,15 +48,10 @@ export default function Footer() {
           {/* Solutions */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold font-poppins text-[#FCFBF8]">
-              SOLUTIONS
+              {t("footer.solutions")}
             </h3>
             <ul className="space-y-2">
-              {[
-                "AI Automation",
-                "Custom Software",
-                "Process Optimization",
-                "Integration Services",
-              ].map((item) => (
+              {solutionItems.map((item) => (
                 <li key={item}>
                   <a
                     href="#"
@@ -57,10 +67,10 @@ export default function Footer() {
           {/* Company */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold font-poppins text-[#FCFBF8]">
-              COMPANY
+              {t("footer.company")}
             </h3>
             <ul className="space-y-2">
-              {["About Us", "Case Studies", "Team", "Contact"].map((item) => (
+              {companyItems.map((item) => (
                 <li key={item}>
                   <a
                     href="#"
@@ -76,30 +86,30 @@ export default function Footer() {
           {/* Contact */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold font-poppins text-[#FCFBF8]">
-              CONTACT
+              {t("footer.contact")}
             </h3>
             <ul className="space-y-3">
               <li className="text-sm font-normal font-inter">
-                <span className="text-[#A7AFBE]">Email: </span>
+                <span className="text-[#A7AFBE]">{t("footer.contact.email")}</span>
                 <a
                   href="mailto:info@ailigent.ai"
                   className="text-[#FCFBF8] hover:text-[#00D4FF] transition-colors"
                 >
-                  info@ailigent.ai
+                  {t("footer.contact.emailAddress")}
                 </a>
               </li>
               <li className="text-sm font-normal font-inter">
-                <span className="text-[#A7AFBE]">Phone: </span>
+                <span className="text-[#A7AFBE]">{t("footer.contact.phone")}</span>
                 <a
                   href="#"
                   className="text-[#FCFBF8] hover:text-[#00D4FF] transition-colors"
                 >
-                  Contact us
+                  {t("footer.contact.phoneLink")}
                 </a>
               </li>
               <li className="text-sm font-normal font-inter">
-                <span className="text-[#A7AFBE]">Location: </span>
-                <span className="text-[#FCFBF8]">Saudi Arabia</span>
+                <span className="text-[#A7AFBE]">{t("footer.contact.location")}</span>
+                <span className="text-[#FCFBF8]">{t("footer.contact.locationValue")}</span>
               </li>
             </ul>
           </div>
@@ -109,20 +119,20 @@ export default function Footer() {
         <div className="pt-8 border-t border-[rgba(121,64,190,0.30)]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm font-normal font-inter text-[#A7AFBE]">
-              © 2025 AILIGENT. All rights reserved.
+              {t("footer.copyright")}
             </p>
             <div className="flex gap-6">
               <a
                 href="#"
                 className="text-sm font-normal font-inter text-[#A7AFBE] hover:text-[#00D4FF] transition-colors"
               >
-                Privacy Policy
+                {t("footer.privacy")}
               </a>
               <a
                 href="#"
                 className="text-sm font-normal font-inter text-[#A7AFBE] hover:text-[#00D4FF] transition-colors"
               >
-                Terms of Service
+                {t("footer.terms")}
               </a>
             </div>
           </div>

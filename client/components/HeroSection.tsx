@@ -1,6 +1,9 @@
 import { ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full min-h-[504px] bg-gradient-to-br from-[#131119] via-[#41227C] to-[#4772A7] overflow-hidden">
       {/* Decorative 3D objects */}
@@ -19,17 +22,16 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center justify-center gap-6 px-4 py-16 md:py-24 text-center max-w-[1082px] mx-auto">
         <div className="space-y-4">
           <h1 className="text-3xl md:text-5xl lg:text-[40px] font-bold font-commissioner uppercase text-[#FBFBFB] leading-tight tracking-tight">
-            Turn Your Data Into Decisions Intelligently
+            {t("hero.title")}
           </h1>
           <p className="text-xl md:text-3xl lg:text-[32px] font-commissioner text-[#CCC] max-w-[863px] mx-auto">
-            <span className="font-semibold">AILIGENT</span> is a Saudi company
-            specializing in AI automation systems that transform business
-            operations and boost productivity by over 90%.
+            <span className="font-semibold">{t("hero.subtitle.part1")}</span>
+            {t("hero.subtitle.part2")}
           </p>
         </div>
 
         <button className="flex items-center gap-1.5 px-4 py-3 rounded-full border border-[rgba(255,255,255,0.40)] bg-gradient-to-r from-[#7940BE] via-[#9952E0] via-[#5994B7] to-[#14B06C] shadow-lg text-white font-bold text-lg">
-          BOOK A FREE DEMO
+          {t("hero.cta")}
           <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
             <ChevronRight className="w-4 h-4 text-[#7940BE]" />
           </div>
