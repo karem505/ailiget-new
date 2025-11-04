@@ -1,5 +1,5 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Commissioner:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Commissioner:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -98,6 +98,19 @@
 
   body {
     @apply bg-[#010413] text-foreground font-inter;
+  }
+
+  /* RTL Support for Arabic */
+  html[dir="rtl"] body {
+    font-family: "Cairo", "Inter", sans-serif;
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+
+  html[dir="ltr"] {
+    direction: ltr;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
