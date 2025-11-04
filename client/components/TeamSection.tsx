@@ -11,7 +11,7 @@ const teamMembers = [
   },
   {
     name: "Dr. Karem Shohoud",
-    roleKey: "team.role.cmo",
+    roleKey: "team.role.ceo",
     positionKey: "team.position.ceo",
     image:
       "https://api.builder.io/api/v1/image/assets/TEMP/8a30d450e67e3f46363339267dd2a4e2c7bc28c6?width=288",
