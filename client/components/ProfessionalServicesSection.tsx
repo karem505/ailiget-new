@@ -10,6 +10,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { ScaleIn } from "./animations/ScaleIn";
 import { StaggerContainer, StaggerItem } from "./animations/StaggerContainer";
+import CircuitBoard from "./animations/CircuitBoard";
 
 export default function ProfessionalServicesSection() {
   const { t } = useLanguage();
@@ -48,8 +49,11 @@ export default function ProfessionalServicesSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 px-4">
-      <div className="max-w-[1283px] mx-auto space-y-8">
+    <section className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-[#0F1522] to-[#010413]">
+      {/* Circuit board background */}
+      <CircuitBoard density={25} opacity={0.12} animated={true} />
+
+      <div className="relative z-10 max-w-[1283px] mx-auto space-y-8">
         <ScaleIn delay={0.2}>
           <h2 className="text-2xl md:text-[30px] font-bold font-poppins text-center text-[#FCFBF8]">
             {t("professional.title")}
@@ -66,9 +70,25 @@ export default function ProfessionalServicesSection() {
                   boxShadow: "0 20px 40px rgba(0, 212, 255, 0.3)"
                 }}
                 transition={{ duration: 0.3 }}
-                className="h-full p-6 rounded-xl border-2 border-[rgba(121,64,190,0.50)] bg-gradient-to-br from-[rgba(27,34,50,0.70)] to-[rgba(14,21,37,0.60)] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.30),0_0_20px_0_rgba(0,212,255,0.10)]"
+                className="relative h-full p-6 rounded-xl border-2 border-[rgba(121,64,190,0.50)] bg-gradient-to-br from-[rgba(27,34,50,0.70)] to-[rgba(14,21,37,0.60)] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.30),0_0_20px_0_rgba(0,212,255,0.10)] overflow-hidden group"
               >
-                <div className="space-y-6">
+                {/* Holographic shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(110deg, transparent 30%, rgba(0, 212, 255, 0.2) 50%, transparent 70%)',
+                  }}
+                  animate={{
+                    x: ['-100%', '200%'],
+                  }}
+                  transition={{
+                    duration: 2,
+                    ease: 'linear',
+                    repeat: Infinity,
+                  }}
+                />
+
+                <div className="relative z-10 space-y-6">
                   <div className="flex justify-center">
                     <motion.div
                       whileHover={{

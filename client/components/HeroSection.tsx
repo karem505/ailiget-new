@@ -4,31 +4,48 @@ import { motion } from "framer-motion";
 import { FadeIn } from "./animations/FadeIn";
 import { ScaleIn } from "./animations/ScaleIn";
 import { FloatingElement } from "./animations/FloatingElement";
+import NeuralNetwork from "./animations/NeuralNetwork";
+import DataParticles from "./animations/DataParticles";
+import AIBrain from "./animations/AIBrain";
 
 export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
     <section className="relative w-full min-h-[400px] sm:min-h-[450px] md:min-h-[504px] bg-gradient-to-br from-[#131119] via-[#41227C] to-[#4772A7] overflow-hidden">
+      {/* AI-themed background layers */}
+      <NeuralNetwork nodeCount={40} connectionDistance={120} opacity={0.25} speed={0.3} />
+      <DataParticles particleCount={25} speed={0.2} />
+
+      {/* AI Brain visualization - positioned on the right */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.3, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute right-[-50px] sm:right-0 top-1/2 -translate-y-1/2 hidden lg:block"
+      >
+        <AIBrain size={400} />
+      </motion.div>
+
       {/* Decorative 3D objects with floating animation */}
       <FloatingElement duration={4} yOffset={15}>
         <motion.img
           initial={{ opacity: 0, x: -100, rotate: -28.194 }}
-          animate={{ opacity: 0.8, x: 0, rotate: -28.194 }}
+          animate={{ opacity: 0.6, x: 0, rotate: -28.194 }}
           transition={{ duration: 1, ease: "easeOut" }}
           src="https://api.builder.io/api/v1/image/assets/TEMP/299c44f9aa48255f1f96ce36485367b83a82258f?width=712"
           alt=""
-          className="absolute left-[-80px] sm:left-[-55px] top-[49px] w-[200px] sm:w-[280px] md:w-[356px] h-[164px] sm:h-[230px] md:h-[292px] opacity-60 sm:opacity-80"
+          className="absolute left-[-80px] sm:left-[-55px] top-[49px] w-[200px] sm:w-[280px] md:w-[356px] h-[164px] sm:h-[230px] md:h-[292px] opacity-40 sm:opacity-60"
         />
       </FloatingElement>
       <FloatingElement duration={5} yOffset={20} delay={0.5}>
         <motion.img
           initial={{ opacity: 0, x: 100, rotate: 0 }}
-          animate={{ opacity: 0.8, x: 0, rotate: 0 }}
+          animate={{ opacity: 0.6, x: 0, rotate: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           src="https://api.builder.io/api/v1/image/assets/TEMP/14e5c9175eeea6e7ac9bde566303a9b10e9a1278?width=842"
           alt=""
-          className="absolute right-[-50px] sm:right-0 top-[100px] sm:top-[150px] w-[250px] sm:w-[320px] md:w-[421px] h-[205px] sm:h-[262px] md:h-[345px] opacity-60 sm:opacity-80 hidden sm:block"
+          className="absolute right-[-50px] sm:right-0 top-[100px] sm:top-[150px] w-[250px] sm:w-[320px] md:w-[421px] h-[205px] sm:h-[262px] md:h-[345px] opacity-40 sm:opacity-60 hidden sm:block lg:hidden"
         />
       </FloatingElement>
 

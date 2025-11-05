@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import FoundationSection from "@/components/FoundationSection";
+import StatsSection from "@/components/StatsSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProfessionalServicesSection from "@/components/ProfessionalServicesSection";
 import SuccessStoriesSection from "@/components/SuccessStoriesSection";
@@ -17,6 +18,7 @@ export default function Index() {
       <main className="pt-[90px]">
         <HeroSection />
         <FoundationSection />
+        <StatsSection />
         <ServicesSection />
         <ProfessionalServicesSection />
         <SuccessStoriesSection />

@@ -86,6 +86,10 @@ const translationsEn: Record<string, string> = {
   "services.pmo.tag2": "Reporting",
   "services.pmo.tag3": "Monitoring",
 
+  // Stats Section
+  "stats.title": "Proven Business Impact",
+  "stats.subtitle": "Our AI-powered solutions deliver measurable results that transform businesses",
+
   // Professional Services Section
   "professional.title": "PROFESSIONAL SERVICES",
   "professional.service1.title": "Business Consultation & Customized Software",
@@ -224,6 +228,10 @@ const translationsAr: Record<string, string> = {
   "services.pmo.tag1": "مدعوم بالذكاء الاصطناعي",
   "services.pmo.tag2": "إعداد التقارير",
   "services.pmo.tag3": "المراقبة",
+
+  // Stats Section
+  "stats.title": "تأثير مثبت على الأعمال",
+  "stats.subtitle": "حلولنا المدعومة بالذكاء الاصطناعي تقدم نتائج قابلة للقياس تحول الأعمال",
 
   // Professional Services Section
   "professional.title": "الخدمات المهنية",
