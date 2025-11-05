@@ -1,5 +1,8 @@
 import { Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
+import { FadeIn } from "./animations/FadeIn";
+import { StaggerContainer, StaggerItem } from "./animations/StaggerContainer";
 
 const teamMembers = [
   {
@@ -43,81 +46,113 @@ export default function TeamSection() {
       <div className="relative z-10 max-w-[1348px] mx-auto space-y-16">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-[#FCFBF8]">
-            {t("team.title")}
-          </h2>
-          <p className="text-xl font-normal font-inter text-[#A7AFBE]">
-            {t("team.subtitle")}
-          </p>
+          <FadeIn direction="down" duration={0.8}>
+            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-[#FCFBF8]">
+              {t("team.title")}
+            </h2>
+          </FadeIn>
+          <FadeIn direction="up" duration={0.8} delay={0.2}>
+            <p className="text-xl font-normal font-inter text-[#A7AFBE]">
+              {t("team.subtitle")}
+            </p>
+          </FadeIn>
         </div>
 
         {/* Team Grid */}
         <div className="space-y-10">
           {/* Main Team Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <StaggerContainer staggerDelay={0.2} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {teamMembers.map((member, idx) => (
-              <div key={idx} className="relative w-full max-w-[392px]">
-                <div className="absolute inset-0 rounded-full border-2 border-[rgba(121,64,190,0.50)] bg-[#0F1522] backdrop-blur-[10px] shadow-[0_7px_29px_0_rgba(0,0,0,0.30),0_0_18px_0_rgba(0,212,255,0.10)]" />
-                <div className="relative flex flex-col items-center gap-9 p-14">
-                  <div className="w-32 h-32 rounded-2xl border-2 border-[rgba(103,80,164,0.08)] overflow-hidden shadow-[0_0_40px_0_rgba(0,212,255,0.50),0_0_80px_0_rgba(153,82,224,0.30)]">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              <StaggerItem key={idx}>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative w-full max-w-[392px]"
+                >
+                  <div className="absolute inset-0 rounded-full border-2 border-[rgba(121,64,190,0.50)] bg-[#0F1522] backdrop-blur-[10px] shadow-[0_7px_29px_0_rgba(0,0,0,0.30),0_0_18px_0_rgba(0,212,255,0.10)]" />
+                  <div className="relative flex flex-col items-center gap-9 p-14">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-32 h-32 rounded-2xl border-2 border-[rgba(103,80,164,0.08)] overflow-hidden shadow-[0_0_40px_0_rgba(0,212,255,0.50),0_0_80px_0_rgba(153,82,224,0.30)]"
+                    >
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
 
-                  <div className="text-center space-y-3">
-                    <h3 className="text-xl font-bold font-poppins text-[#FCFBF8] tracking-tight">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm font-semibold font-inter text-[#7C39D3]">
-                      {t(member.roleKey)}
-                    </p>
-                    <p className="text-sm font-normal font-inter text-[#A7AFBE]">
-                      {t(member.positionKey)}
-                    </p>
+                    <div className="text-center space-y-3">
+                      <h3 className="text-xl font-bold font-poppins text-[#FCFBF8] tracking-tight">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm font-semibold font-inter text-[#7C39D3]">
+                        {t(member.roleKey)}
+                      </p>
+                      <p className="text-sm font-normal font-inter text-[#A7AFBE]">
+                        {t(member.positionKey)}
+                      </p>
 
-                    <button className="inline-flex items-center gap-2 px-3 py-2 rounded-[14px] border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] shadow-[0_8px_32px_0_rgba(0,0,0,0.40),0_0_20px_0_rgba(0,212,255,0.15)]">
-                      <Linkedin className="w-4 h-4 text-[#7C39D3]" />
-                      <span className="text-sm font-medium font-inter text-[#FCFBF8]">
-                        {t("team.linkedin")}
-                      </span>
-                    </button>
+                      <motion.button
+                        whileHover={{ scale: 1.1, boxShadow: "0 10px 30px rgba(0, 212, 255, 0.3)" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-[14px] border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] shadow-[0_8px_32px_0_rgba(0,0,0,0.40),0_0_20px_0_rgba(0,212,255,0.15)]"
+                      >
+                        <Linkedin className="w-4 h-4 text-[#7C39D3]" />
+                        <span className="text-sm font-medium font-inter text-[#FCFBF8]">
+                          {t("team.linkedin")}
+                        </span>
+                      </motion.button>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
           {/* Placeholder Members */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
+          <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
             {placeholderMembers.map((member, idx) => (
-              <div key={idx} className="relative w-full max-w-[315px]">
-                <div className="absolute inset-0 rounded-full border-2 border-[rgba(121,64,190,0.50)] bg-[#0F1522] backdrop-blur-[8px] shadow-[0_6px_23px_0_rgba(0,0,0,0.30),0_0_15px_0_rgba(0,212,255,0.10)]" />
-                <div className="relative flex flex-col items-center gap-7 p-12">
-                  <div className="w-[104px] h-[104px] rounded-xl border border-[rgba(103,80,164,0.08)] bg-white/5 shadow-[0_0_32px_0_rgba(0,212,255,0.50),0_0_64px_0_rgba(153,82,224,0.30)]" />
+              <StaggerItem key={idx}>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative w-full max-w-[315px]"
+                >
+                  <div className="absolute inset-0 rounded-full border-2 border-[rgba(121,64,190,0.50)] bg-[#0F1522] backdrop-blur-[8px] shadow-[0_6px_23px_0_rgba(0,0,0,0.30),0_0_15px_0_rgba(0,212,255,0.10)]" />
+                  <div className="relative flex flex-col items-center gap-7 p-12">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-[104px] h-[104px] rounded-xl border border-[rgba(103,80,164,0.08)] bg-white/5 shadow-[0_0_32px_0_rgba(0,212,255,0.50),0_0_64px_0_rgba(153,82,224,0.30)]"
+                    />
 
-                  <div className="text-center space-y-2">
-                    <h3 className="text-xl font-bold font-poppins text-[#FCFBF8] tracking-tight">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm font-semibold font-inter text-[#7C39D3]">
-                      {t(member.roleKey)}
-                    </p>
-                    <p className="text-sm font-normal font-inter text-[#A7AFBE]">
-                      {t(member.positionKey)}
-                    </p>
+                    <div className="text-center space-y-2">
+                      <h3 className="text-xl font-bold font-poppins text-[#FCFBF8] tracking-tight">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm font-semibold font-inter text-[#7C39D3]">
+                        {t(member.roleKey)}
+                      </p>
+                      <p className="text-sm font-normal font-inter text-[#A7AFBE]">
+                        {t(member.positionKey)}
+                      </p>
 
-                    <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[8px] text-sm font-medium font-inter text-[#FCFBF8]">
-                      <Linkedin className="w-3 h-3 text-[#7C39D3]" />
-                      {t("team.linkedin")}
-                    </button>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[8px] text-sm font-medium font-inter text-[#FCFBF8]"
+                      >
+                        <Linkedin className="w-3 h-3 text-[#7C39D3]" />
+                        {t("team.linkedin")}
+                      </motion.button>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </div>
     </section>
