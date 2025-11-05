@@ -7,6 +7,9 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
+import { ScaleIn } from "./animations/ScaleIn";
+import { StaggerContainer, StaggerItem } from "./animations/StaggerContainer";
 
 export default function ProfessionalServicesSection() {
   const { t } = useLanguage();
@@ -47,37 +50,53 @@ export default function ProfessionalServicesSection() {
   return (
     <section className="py-16 md:py-24 px-4">
       <div className="max-w-[1283px] mx-auto space-y-8">
-        <h2 className="text-2xl md:text-[30px] font-bold font-poppins text-center text-[#FCFBF8]">
-          {t("professional.title")}
-        </h2>
+        <ScaleIn delay={0.2}>
+          <h2 className="text-2xl md:text-[30px] font-bold font-poppins text-center text-[#FCFBF8]">
+            {t("professional.title")}
+          </h2>
+        </ScaleIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-xl border-2 border-[rgba(121,64,190,0.50)] bg-gradient-to-br from-[rgba(27,34,50,0.70)] to-[rgba(14,21,37,0.60)] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.30),0_0_20px_0_rgba(0,212,255,0.10)]"
-            >
-              <div className="space-y-6">
-                <div className="flex justify-center">
-                  <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-icon shadow-[0_0_40px_0_rgba(0,212,255,0.50),0_0_80px_0_rgba(153,82,224,0.30)]">
-                    <service.icon
-                      className="w-10 h-10 text-white"
-                      strokeWidth={2.5}
-                    />
+            <StaggerItem key={idx}>
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  y: -10,
+                  boxShadow: "0 20px 40px rgba(0, 212, 255, 0.3)"
+                }}
+                transition={{ duration: 0.3 }}
+                className="h-full p-6 rounded-xl border-2 border-[rgba(121,64,190,0.50)] bg-gradient-to-br from-[rgba(27,34,50,0.70)] to-[rgba(14,21,37,0.60)] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.30),0_0_20px_0_rgba(0,212,255,0.10)]"
+              >
+                <div className="space-y-6">
+                  <div className="flex justify-center">
+                    <motion.div
+                      whileHover={{
+                        rotate: 360,
+                        scale: 1.2
+                      }}
+                      transition={{ duration: 0.6 }}
+                      className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-icon shadow-[0_0_40px_0_rgba(0,212,255,0.50),0_0_80px_0_rgba(153,82,224,0.30)]"
+                    >
+                      <service.icon
+                        className="w-10 h-10 text-white"
+                        strokeWidth={2.5}
+                      />
+                    </motion.div>
                   </div>
+
+                  <h3 className="text-lg font-semibold font-poppins text-center text-[#FCFBF8] leading-7 tracking-tight">
+                    {t(service.titleKey)}
+                  </h3>
+
+                  <p className="text-sm font-normal font-inter text-center text-[#A7AFBE] leading-[22.75px]">
+                    {t(service.descriptionKey)}
+                  </p>
                 </div>
-
-                <h3 className="text-lg font-semibold font-poppins text-center text-[#FCFBF8] leading-7 tracking-tight">
-                  {t(service.titleKey)}
-                </h3>
-
-                <p className="text-sm font-normal font-inter text-center text-[#A7AFBE] leading-[22.75px]">
-                  {t(service.descriptionKey)}
-                </p>
-              </div>
-            </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
