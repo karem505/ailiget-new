@@ -4,12 +4,16 @@ import { motion } from "framer-motion";
 import { FadeIn } from "./animations/FadeIn";
 import { ScaleIn } from "./animations/ScaleIn";
 import { AnimatedCard } from "./animations/AnimatedCard";
+import NeuralNetwork from "./animations/NeuralNetwork";
 
 export default function ServicesSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-16 md:py-24 px-4">
+    <section className="relative py-16 md:py-24 px-4 overflow-hidden">
+      {/* Neural network background */}
+      <NeuralNetwork nodeCount={30} connectionDistance={100} opacity={0.2} speed={0.25} />
+
       {/* Blur effect */}
       <div className="absolute left-[-100px] top-0 blur-gradient-purple pointer-events-none" />
 
@@ -36,7 +40,57 @@ export default function ServicesSection() {
             </h3>
           </ScaleIn>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[1024px] mx-auto">
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[1024px] mx-auto">
+            {/* Animated connection line between cards */}
+            <motion.div
+              className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-1 pointer-events-none"
+              initial={{ scaleX: 0, opacity: 0 }}
+              whileInView={{ scaleX: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              <svg className="w-full h-full" viewBox="0 0 100 10">
+                <defs>
+                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#00D4FF" />
+                    <stop offset="50%" stopColor="#7940BE" />
+                    <stop offset="100%" stopColor="#14B06C" />
+                  </linearGradient>
+                </defs>
+                <motion.line
+                  x1="0"
+                  y1="5"
+                  x2="100"
+                  y2="5"
+                  stroke="url(#lineGradient)"
+                  strokeWidth="2"
+                  strokeDasharray="4 4"
+                  animate={{
+                    strokeDashoffset: [0, -8],
+                  }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+                {/* Animated dots */}
+                <motion.circle
+                  r="3"
+                  fill="#00D4FF"
+                  animate={{
+                    cx: [0, 100],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  cy="5"
+                />
+              </svg>
+            </motion.div>
+
             {/* Tornix Card */}
             <AnimatedCard
               delay={0.3}
