@@ -7,7 +7,7 @@ import { StaggerContainer, StaggerItem } from "./animations/StaggerContainer";
 const teamMembers = [
   {
     name: "Dr. Ahmed Alsenosy",
-    roleKey: "team.role.ceo",
+    roleKey: "team.role.gm",
     positionKey: "team.position.general",
     image: "/team-ahmed.png",
     linkedin: "https://www.linkedin.com/in/alsenosy/",
