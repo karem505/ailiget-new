@@ -40,27 +40,24 @@ export default function SuccessStoriesSection() {
           {/* Tornix Story */}
           <div className="max-w-[1072px] mx-auto p-6 md:p-8 rounded-xl border-2 border-[rgba(121,64,190,0.50)] bg-[#0F1522] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.30),0_0_20px_0_rgba(0,212,255,0.10)]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              {/* Video Placeholder */}
+              {/* Video */}
               <div className="relative rounded-2xl border border-[rgba(0,212,255,0.30)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] shadow-[0_0_40px_0_rgba(0,212,255,0.50),0_0_80px_0_rgba(153,82,224,0.30)] overflow-hidden aspect-video">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/dead134dbaad003fc3723e554f6c728695ce0e36?width=1026"
-                  alt="Tornix Demo"
-                  className="w-full h-full object-cover"
+                <iframe
+                  src="https://www.youtube.com/embed/jbuQf16vO-4"
+                  title="Tornix Project Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[68px] h-[48px] bg-[#FF0105] flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
-                    <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1" />
-                  </div>
-                </div>
               </div>
 
               {/* Content */}
               <div className="space-y-6 bg-[#0E1525] p-6 rounded-lg">
                 <div className="flex items-center gap-4">
                   <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/e493a03f79314c81e8dc8284763f092d69f3fd3b?width=128"
+                    src="/tornix-logo.png"
                     alt="Tornix logo"
-                    className="w-16 h-16"
+                    className="w-16 h-16 object-contain"
                   />
                   <span className="px-3 py-1 rounded-full border border-[rgba(121,64,190,0.50)] bg-[rgba(27,34,50,0.70)] text-xs font-semibold text-[#7C39D3]">
                     {t("success.tornix.badge")}
@@ -97,27 +94,24 @@ export default function SuccessStoriesSection() {
           {/* Professional Engineers Story */}
           <div className="max-w-[1072px] mx-auto p-6 md:p-8 rounded-xl border-2 border-[rgba(121,64,190,0.50)] bg-[#0F1522] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.30),0_0_20px_0_rgba(0,212,255,0.10)]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              {/* Video Placeholder */}
+              {/* Video */}
               <div className="relative rounded-2xl border border-[rgba(121,64,190,0.30)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] shadow-[0_0_40px_0_rgba(0,212,255,0.50),0_0_80px_0_rgba(153,82,224,0.30)] overflow-hidden aspect-video">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/14b40dd46970b9887fe15c3f51b62e9d36ecfbe1?width=1026"
-                  alt="Professional Engineers Demo"
-                  className="w-full h-full object-cover"
+                <iframe
+                  src="https://www.youtube.com/embed/4T1_Spk9dss"
+                  title="Professional Engineers Project Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[68px] h-[48px] bg-[#FF0105] flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
-                    <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1" />
-                  </div>
-                </div>
               </div>
 
               {/* Content */}
               <div className="space-y-6 bg-[#0E1525] p-6 rounded-lg">
                 <div className="flex items-center gap-4">
                   <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/053234511e75db7a49e32cb18b5891e9514bfbf9?width=208"
+                    src="/pe-logo.webp"
                     alt="Professional Engineers logo"
-                    className="h-16 w-auto"
+                    className="h-16 w-auto object-contain"
                   />
                   <span className="px-3 py-1 rounded-full border border-[rgba(121,64,190,0.30)] bg-[rgba(27,34,50,0.70)] text-xs font-semibold text-[#7C39D3]">
                     {t("success.pe.badge")}
