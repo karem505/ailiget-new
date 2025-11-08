@@ -9,30 +9,23 @@ const teamMembers = [
     name: "Dr. Ahmed Alsenosy",
     roleKey: "team.role.ceo",
     positionKey: "team.position.general",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/8e14fe56939827f567f7772c1176762f02b45bf0?width=258",
+    image: "/team-ahmed.png",
+    linkedin: "https://www.linkedin.com/in/alsenosy/",
   },
   {
     name: "Dr. Karem Shohoud",
     roleKey: "team.role.ceo",
     positionKey: "team.position.ceo",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/8a30d450e67e3f46363339267dd2a4e2c7bc28c6?width=288",
+    image: "/team-karem.jpg",
+    linkedin: "https://www.linkedin.com/in/abo-el-makarem-shohoud-745367244/",
   },
   {
     name: "Dr. Sohaila Abuelliel",
     roleKey: "team.role.cmo",
     positionKey: "team.position.ceo",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/c8094a62569ee3d3b7a08b67ea5cdeee904b4d4c?width=250",
+    image: "/team-sohaila.jpg",
+    linkedin: "https://www.linkedin.com/in/sohaila-abuelliel-350672274/",
   },
-];
-
-const placeholderMembers = [
-  { name: "Dr. User two", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
-  { name: "Dr. User three", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
-  { name: "Dr. User four", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
-  { name: "Dr. User one", roleKey: "team.role.cmo", positionKey: "team.position.ceo" },
 ];
 
 export default function TeamSection() {
@@ -94,7 +87,10 @@ export default function TeamSection() {
                         {t(member.positionKey)}
                       </p>
 
-                      <motion.button
+                      <motion.a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1, boxShadow: "0 10px 30px rgba(0, 212, 255, 0.3)" }}
                         whileTap={{ scale: 0.95 }}
                         className="inline-flex items-center gap-2 px-3 py-2 rounded-[14px] border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] shadow-[0_8px_32px_0_rgba(0,0,0,0.40),0_0_20px_0_rgba(0,212,255,0.15)]"
@@ -103,50 +99,7 @@ export default function TeamSection() {
                         <span className="text-sm font-medium font-inter text-[#FCFBF8]">
                           {t("team.linkedin")}
                         </span>
-                      </motion.button>
-                    </div>
-                  </div>
-                </motion.div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          {/* Placeholder Members */}
-          <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
-            {placeholderMembers.map((member, idx) => (
-              <StaggerItem key={idx}>
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative w-full max-w-[315px]"
-                >
-                  <div className="absolute inset-0 rounded-full border-2 border-[rgba(121,64,190,0.50)] bg-[#0F1522] backdrop-blur-[8px] shadow-[0_6px_23px_0_rgba(0,0,0,0.30),0_0_15px_0_rgba(0,212,255,0.10)]" />
-                  <div className="relative flex flex-col items-center gap-7 p-12">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-[104px] h-[104px] rounded-xl border border-[rgba(103,80,164,0.08)] bg-white/5 shadow-[0_0_32px_0_rgba(0,212,255,0.50),0_0_64px_0_rgba(153,82,224,0.30)]"
-                    />
-
-                    <div className="text-center space-y-2">
-                      <h3 className="text-xl font-bold font-poppins text-[#FCFBF8] tracking-tight">
-                        {member.name}
-                      </h3>
-                      <p className="text-sm font-semibold font-inter text-[#7C39D3]">
-                        {t(member.roleKey)}
-                      </p>
-                      <p className="text-sm font-normal font-inter text-[#A7AFBE]">
-                        {t(member.positionKey)}
-                      </p>
-
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[rgba(103,80,164,0.08)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[8px] text-sm font-medium font-inter text-[#FCFBF8]"
-                      >
-                        <Linkedin className="w-3 h-3 text-[#7C39D3]" />
-                        {t("team.linkedin")}
-                      </motion.button>
+                      </motion.a>
                     </div>
                   </div>
                 </motion.div>
