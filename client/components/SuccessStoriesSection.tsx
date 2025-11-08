@@ -57,6 +57,7 @@ export default function SuccessStoriesSection() {
                   <img
                     src="/tornix-logo.png"
                     alt="Tornix logo"
+                    loading="lazy"
                     className="w-16 h-16 object-contain"
                   />
                   <span className="px-3 py-1 rounded-full border border-[rgba(121,64,190,0.50)] bg-[rgba(27,34,50,0.70)] text-xs font-semibold text-[#7C39D3]">
@@ -111,6 +112,7 @@ export default function SuccessStoriesSection() {
                   <img
                     src="/pe-logo.webp"
                     alt="Professional Engineers logo"
+                    loading="lazy"
                     className="h-16 w-auto object-contain"
                   />
                   <span className="px-3 py-1 rounded-full border border-[rgba(121,64,190,0.30)] bg-[rgba(27,34,50,0.70)] text-xs font-semibold text-[#7C39D3]">
@@ -151,11 +153,13 @@ export default function SuccessStoriesSection() {
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/8196a551c63dea243e7d8fd21dba277125826898?width=1220"
         alt=""
+        loading="lazy"
         className="absolute right-0 bottom-0 w-[610px] h-auto opacity-60 hidden xl:block pointer-events-none"
       />
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/9fa9d04c3f280557a26608839e63d05f10acd9b6?width=536"
         alt=""
+        loading="lazy"
         className="absolute left-0 bottom-20 w-[268px] h-auto opacity-60 hidden xl:block pointer-events-none"
       />
     </section>

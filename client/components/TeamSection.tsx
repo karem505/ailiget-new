@@ -72,6 +72,7 @@ export default function TeamSection() {
                       <img
                         src={member.image}
                         alt={member.name}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
