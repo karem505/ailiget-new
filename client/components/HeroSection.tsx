@@ -14,8 +14,8 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-[400px] sm:min-h-[450px] md:min-h-[504px] bg-gradient-to-br from-[#131119] via-[#41227C] to-[#4772A7] overflow-hidden">
       {/* AI-themed background layers */}
-      <NeuralNetwork nodeCount={40} connectionDistance={120} opacity={0.25} speed={0.3} />
-      <DataParticles particleCount={25} speed={0.2} />
+      <NeuralNetwork nodeCount={20} connectionDistance={100} opacity={0.25} speed={0.3} />
+      <DataParticles particleCount={12} speed={0.2} />
 
       {/* AI Brain visualization - positioned on the right */}
       <motion.div
@@ -35,6 +35,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           src="https://api.builder.io/api/v1/image/assets/TEMP/299c44f9aa48255f1f96ce36485367b83a82258f?width=712"
           alt=""
+          loading="lazy"
           className="absolute left-[-80px] sm:left-[-55px] top-[49px] w-[200px] sm:w-[280px] md:w-[356px] h-[164px] sm:h-[230px] md:h-[292px] opacity-40 sm:opacity-60"
         />
       </FloatingElement>
@@ -45,6 +46,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           src="https://api.builder.io/api/v1/image/assets/TEMP/14e5c9175eeea6e7ac9bde566303a9b10e9a1278?width=842"
           alt=""
+          loading="lazy"
           className="absolute right-[-50px] sm:right-0 top-[100px] sm:top-[150px] w-[250px] sm:w-[320px] md:w-[421px] h-[205px] sm:h-[262px] md:h-[345px] opacity-40 sm:opacity-60 hidden sm:block lg:hidden"
         />
       </FloatingElement>

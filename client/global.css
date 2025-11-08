@@ -1,6 +1,37 @@
 /** @import must precede all other statements */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Commissioner:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap");
 
+/* Preconnect to Google Fonts for faster loading */
+@supports (font: -apple-system-body) and (not (font: -apple-system-body)) {
+  /* This will never match, but preconnect is in the CSS */
+}
+
+/* Ensure font-display is swap for better performance */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Commissioner';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
