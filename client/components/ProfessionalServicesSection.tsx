@@ -1,6 +1,7 @@
 import {
   Lightbulb,
   Rocket,
+  Code,
   Link as LinkIcon,
   Zap,
   Brain,
@@ -27,24 +28,29 @@ export default function ProfessionalServicesSection() {
       descriptionKey: "professional.service2.description",
     },
     {
-      icon: LinkIcon,
+      icon: Code,
       titleKey: "professional.service3.title",
       descriptionKey: "professional.service3.description",
     },
     {
-      icon: Zap,
+      icon: LinkIcon,
       titleKey: "professional.service4.title",
       descriptionKey: "professional.service4.description",
     },
     {
-      icon: Brain,
+      icon: Zap,
       titleKey: "professional.service5.title",
       descriptionKey: "professional.service5.description",
     },
     {
-      icon: MessageSquare,
+      icon: Brain,
       titleKey: "professional.service6.title",
       descriptionKey: "professional.service6.description",
+    },
+    {
+      icon: MessageSquare,
+      titleKey: "professional.service7.title",
+      descriptionKey: "professional.service7.description",
     },
   ];
 

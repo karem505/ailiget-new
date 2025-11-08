@@ -87,6 +87,22 @@ export default function ContactFormSection() {
                       className="space-y-2"
                     >
                       <label className="text-xs sm:text-sm font-medium font-inter text-[#FCFBF8]">
+                        {t("contact.phone")}
+                      </label>
+                      <input
+                        type="tel"
+                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-[rgba(121,64,190,0.30)] bg-[rgba(27,34,50,0.70)] backdrop-blur-[10px] text-[#FCFBF8] placeholder:text-[#A7AFBE] focus:outline-none focus:ring-2 focus:ring-[#00D4FF] transition-all"
+                        placeholder={t("contact.phone.placeholder")}
+                      />
+                    </motion.div>
+                  </StaggerItem>
+
+                  <StaggerItem>
+                    <motion.div
+                      whileFocus={{ scale: 1.02 }}
+                      className="space-y-2"
+                    >
+                      <label className="text-xs sm:text-sm font-medium font-inter text-[#FCFBF8]">
                         {t("contact.company")}
                       </label>
                       <input
